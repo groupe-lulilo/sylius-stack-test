@@ -1,0 +1,14 @@
+sylius_twig_hooks:
+    hooks:
+        'sylius_admin.movie.create.content':
+            form:
+                component: 'App\Twig\Components\MovieComponent'
+                props:
+                    form: '@=_context.form'
+                    resource: '@=_context.resource'
+        'sylius_admin.movie.update.content':
+            form:
+                component: 'App\Twig\Components\MovieComponent'
+                props:
+                    form: '@=_context.form'
+                    resource: '@=_context.resource'
