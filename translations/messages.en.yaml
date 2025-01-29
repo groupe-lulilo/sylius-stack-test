@@ -36,24 +36,24 @@ sylius.ui.in: In
 sylius.ui.not_in: 'Not in'
 sylius.ui.value: Value
 sylius.resource.duplicate: Duplicate
-sylius.no_result: No result
-sylius.ui.no_results: No results found
-sylius.ui.no_results_adjust_your_search: No results found. Adjust your search or filter to show results.
+sylius.no_result: 'No result'
+sylius.ui.no_results: 'No results found'
+sylius.ui.no_results_adjust_your_search: 'No results found. Adjust your search or filter to show results.'
 sylius.ui.update: Update
 sylius.ui.date_filter: Date
 sylius.ui.to: To
 sylius.ui.from: From
-sylius.ui.login_to_your_account: Login to your account
+sylius.ui.login_to_your_account: 'Login to your account'
 sylius.form.login.username: Username
 sylius.form.login.password: Password
-sylius.form.login.remember_me: Remember me
-sylius.form.login.sign_in: Sign in
-sylius.form.login.forgot_your_password: Forgot your password?
-sylius.form.login.sign_in_button: Sign in
+sylius.form.login.remember_me: 'Remember me'
+sylius.form.login.sign_in: 'Sign in'
+sylius.form.login.forgot_your_password: 'Forgot your password?'
+sylius.form.login.sign_in_button: 'Sign in'
 sylius.ui.login: Login
-sylius.ui.administration_panel_login: Admin Login
-
-
+sylius.ui.administration_panel_login: 'Admin Login'
+sylius.ui.hello: Hello
+sylius.ui.logout: Logout
 app.ui.movie: Movie
 app.ui.title: Title
 app.ui.release_date: 'Release date'
@@ -66,5 +66,5 @@ app.ui.supplier: Supplier
 app.ui.suppliers: Suppliers
 app.ui.address: Address
 app.ui.phone: Phone
-app.ui.manager_name: Manager name
-app.ui.last_order_date: Last order date
+app.ui.manager_name: 'Manager name'
+app.ui.last_order_date: 'Last order date'

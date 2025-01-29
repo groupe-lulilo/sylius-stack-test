@@ -8,4 +8,7 @@ sylius_twig_hooks:
         'sylius_admin.supplier.show.content':
             body:
                 template: 'supplier/show.html.twig'
+        'sylius_admin.dashboard.index':
+            body:
+                template: 'dashboard.html.twig'
         
