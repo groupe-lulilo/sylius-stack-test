@@ -43,7 +43,15 @@ sylius.ui.update: Update
 sylius.ui.date_filter: Date
 sylius.ui.to: To
 sylius.ui.from: From
-
+sylius.ui.login_to_your_account: Login to your account
+sylius.form.login.username: Username
+sylius.form.login.password: Password
+sylius.form.login.remember_me: Remember me
+sylius.form.login.sign_in: Sign in
+sylius.form.login.forgot_your_password: Forgot your password?
+sylius.form.login.sign_in_button: Sign in
+sylius.ui.login: Login
+sylius.ui.administration_panel_login: Admin Login
 
 
 app.ui.movie: Movie

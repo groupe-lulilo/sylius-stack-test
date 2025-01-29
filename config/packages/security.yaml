@@ -5,7 +5,25 @@ security:
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         users_in_memory: { memory: null }
+        app_admin_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
     firewalls:
+        admin:
+            context: admin
+            lazy: true
+            pattern: '/admin(?:/.*)?$'
+            provider: app_admin_user_provider # Reuse the provider key you configured on providers section
+            form_login:
+                # These routes are provided by Sylius Admin Ui package
+                login_path: sylius_admin_ui_login 
+                check_path: sylius_admin_ui_login_check
+                default_target_path: sylius_admin_ui_dashboard
+            logout:
+                # These routes are provided by Sylius Admin Ui package
+                path: sylius_admin_ui_logout
+                target: sylius_admin_ui_login
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -24,6 +42,10 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/admin/login, roles: PUBLIC_ACCESS }
+        - { path: ^/admin/logout, roles: PUBLIC_ACCESS }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/, roles: PUBLIC_ACCESS }
 
 when@test:
     security:
