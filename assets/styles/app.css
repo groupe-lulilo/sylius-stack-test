@@ -1,3 +1,29 @@
 body {
     background-color: skyblue;
 }
+
+/* assets/styles/admin.css ou votre fichier CSS */
+.sylius-filters-wrapper {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-item label {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.filter-item input,
+.filter-item select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+}

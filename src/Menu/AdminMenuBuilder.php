@@ -34,6 +34,13 @@ final class AdminMenuBuilder implements MenuBuilderInterface
             ])
         ;
 
+        $menu
+            ->addChild('suppliers', [
+                'route' => 'app_admin_supplier_index',
+            ])
+        ;
+
         return $menu;
     }
 }
+

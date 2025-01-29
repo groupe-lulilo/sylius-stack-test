@@ -1,0 +1,22 @@
+
+{% set movie = hookable_metadata.context.movie %}
+
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    {{ movie.title|nl2br }}
+                </h2>
+                <p>
+                    {{ movie.releaseDate|date('Y-m-d') }}
+                </p>
+                <h4>{{ 'app.ui.actors'|trans }}</h4>
+                <p>
+                    {{ movie.actors|join(', ') }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

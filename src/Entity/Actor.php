@@ -22,4 +22,9 @@ class Actor
     #[Constraints\NotBlank]
     #[ORM\Column(length: 180)]
     public string $name = '';
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 }

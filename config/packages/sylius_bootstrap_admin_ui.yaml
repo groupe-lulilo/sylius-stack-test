@@ -1,2 +1,11 @@
 imports:
     - { resource: '@SyliusBootstrapAdminUiBundle/config/app.php' }
+sylius_twig_hooks:
+    hooks:
+        'sylius_admin.movie.show.content':
+            body:
+                template: 'movie/show.html.twig'
+        'sylius_admin.supplier.show.content':
+            body:
+                template: 'supplier/show.html.twig'
+        

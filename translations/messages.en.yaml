@@ -1,0 +1,62 @@
+sylius.form.collection.add: Add
+sylius.form.collection.delete: Delete
+sylius.ui.create: Create
+sylius.ui.filters: Filters
+sylius.ui.actions: Actions
+sylius.ui.pagination.number_of_results: 'Number of results'
+sylius.ui.search_menu: 'Search menu'
+sylius.ui.dashboard: Dashboard
+sylius.ui.new: New
+sylius.ui.edit: Edit
+sylius.ui.delete: Delete
+sylius.ui.show: Show
+sylius.ui.back: Back
+sylius.ui.save: Save
+sylius.ui.cancel: Cancel
+sylius.ui.all: All
+sylius.ui.yes_label: 'Yes'
+sylius.ui.no_label: 'No'
+sylius.ui.yes_value: 'true'
+sylius.ui.no_value: 'false'
+sylius.ui.yes_color: success
+sylius.ui.no_color: danger
+sylius.ui.filter: Filter
+sylius.ui.reset: Reset
+sylius.ui.success: Success
+sylius.ui.error: Error
+sylius.ui.contains: Contains
+sylius.ui.not_contains: 'Does not contain'
+sylius.ui.equal: Equals
+sylius.ui.not_equal: 'Does not equal'
+sylius.ui.empty: Empty
+sylius.ui.not_empty: 'Not empty'
+sylius.ui.starts_with: 'Starts with'
+sylius.ui.ends_with: 'Ends with'
+sylius.ui.in: In
+sylius.ui.not_in: 'Not in'
+sylius.ui.value: Value
+sylius.resource.duplicate: Duplicate
+sylius.no_result: No result
+sylius.ui.no_results: No results found
+sylius.ui.no_results_adjust_your_search: No results found. Adjust your search or filter to show results.
+sylius.ui.update: Update
+sylius.ui.date_filter: Date
+sylius.ui.to: To
+sylius.ui.from: From
+
+
+
+app.ui.movie: Movie
+app.ui.title: Title
+app.ui.release_date: 'Release date'
+app.ui.movies: Movies
+app.ui.archived: Archived
+app.ui.duplicate: Duplicate
+app.ui.actors: Actors
+app.ui.name: Name
+app.ui.supplier: Supplier
+app.ui.suppliers: Suppliers
+app.ui.address: Address
+app.ui.phone: Phone
+app.ui.manager_name: Manager name
+app.ui.last_order_date: Last order date

@@ -15,6 +15,7 @@ use Sylius\Bundle\GridBundle\Builder\ActionGroup\MainActionGroup;
 use Sylius\Bundle\GridBundle\Builder\Field\DateTimeField;
 use Sylius\Bundle\GridBundle\Builder\Field\StringField;
 use Sylius\Bundle\GridBundle\Builder\Filter\BooleanFilter;
+use Sylius\Bundle\GridBundle\Builder\Filter\StringFilter;
 use Sylius\Bundle\GridBundle\Builder\GridBuilderInterface;
 use Sylius\Bundle\GridBundle\Grid\AbstractGrid;
 use Sylius\Bundle\GridBundle\Grid\ResourceAwareGridInterface;
@@ -33,6 +34,10 @@ final class MovieGrid extends AbstractGrid implements ResourceAwareGridInterface
                 BooleanFilter::create('archived')
                     ->setLabel('app.ui.archived')
                     ->setDefaultValue('false'),
+            )
+            ->addFilter(
+                StringFilter::create('title')
+                    ->setLabel('app.ui.title')
             )
             ->addField(
                 StringField::create('id')

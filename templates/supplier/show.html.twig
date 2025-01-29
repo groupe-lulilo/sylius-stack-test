@@ -1,0 +1,25 @@
+
+{% set supplier = hookable_metadata.context.supplier %}
+
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ supplier.name|nl2br }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> <strong>{{ supplier.managerName|nl2br }}</strong></h6>
+                        <p class="card-text">Adresse : <strong>{{ supplier.address|nl2br }}</strong></p>
+                        <p class="card-text">Tel : <strong>{{ supplier.phone|nl2br }}</strong></p>
+                        {% if supplier.lastOrderDate is not null %}
+                            <p class="card-text">Date de dernière commande : <strong>{{ supplier.lastOrderDate|date('d/m/Y') }}</strong></p>
+                        {% else %}
+                            <p class="card-text">Date de dernière commande : <strong>{{ 'sylius.no_result'|trans }}</strong></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
