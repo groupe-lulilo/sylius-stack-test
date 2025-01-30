@@ -1,0 +1,50 @@
+{% from "@SyliusBootstrapAdminUi/shared/helper/accordion.html.twig" import accordion %}
+{% import "@SyliusBootstrapAdminUi/shared/helper/button.html.twig" as button %}
+
+{% set resources = hookable_metadata.context.resources %}
+{% set path = path(app.request.attributes.get('_route'), app.request.attributes.all('_route_params')) %}
+{% set are_criteria_set = app.request.query.has('criteria') %}
+
+{% if resources.definition.enabledFilters is not empty %}
+    <div class="position-relative z-1 mb-5">
+        {% set content %}
+            <div class="mb-3">
+                <form method="get" action="{{ path }}" novalidate {{ sylius_test_html_attribute('filters-form') }}>
+                    <div class="sylius-filters bg-light p-3">
+                        <div class="row">
+                            {% for filter in resources.definition.enabledFilters|filter(filter => filter.enabled)|sylius_sort_by('position') %}
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 me-2 w-25">
+                                            <label class="form-label mb-0">
+                                                {{ filter.label|trans }}
+                                            </label>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            {{ sylius_grid_render_filter(resources, filter) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {# Si nous sommes sur un nombre impair de filtres, ajoutez un div vide pour maintenir l'alignement #}
+                                {% if loop.last and loop.index is odd %}
+                                    <div class="col-6 mb-3"></div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        {{ button.primary({ text: 'sylius.ui.filter'|trans, icon: 'tabler:adjustments', type: 'submit', attr: sylius_test_html_attribute('filter') }) }}
+                        {{ button.default({ text: 'sylius.ui.reset'|trans, url: path, attr: sylius_test_html_attribute('reset') }) }}
+                    </div>
+                </form>
+            </div>
+        {% endset %}
+
+        {{ accordion([{
+            title: 'sylius.ui.filters'|trans,
+            content: content,
+            icon: 'tabler:adjustments',
+        }], are_criteria_set) }}
+    </div>
+{% endif %}
