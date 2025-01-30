@@ -3,9 +3,8 @@
 ## Starting the project
 
 ```bash
-composer install
 docker compose up -d
-symfony server:start
+php bin/console doctrine:migrations:migrate
 ```
 
 ## Create account
