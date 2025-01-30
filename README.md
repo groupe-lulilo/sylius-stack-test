@@ -3,8 +3,8 @@
 ## Starting the project
 
 ```bash
+docker compose build
 docker compose up -d
-php bin/console doctrine:migrations:migrate
 ```
 
 ## Create account
