@@ -14,3 +14,11 @@
 .breadcrumb-item a:hover {
     color: var(--tblr-primary);
 }
+
+.btn-list button[type=submit] {
+    margin-bottom: 10px;
+}
+
+.btn-list a {
+    margin-bottom: 10px;
+}
