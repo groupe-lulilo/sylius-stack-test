@@ -26,7 +26,12 @@ final class AdminMenuBuilder implements MenuBuilderInterface
             ->addChild('dashboard', [
                 'route' => 'sylius_admin_ui_dashboard',
             ])
+            ->setLabel('sylius.ui.dashboard')
+            ->setLabelAttribute('icon', 'tabler:dashboard')
         ;
+
+        $subMenu = $menu->addChild('lulilo')
+            ->setLabelAttribute('icon', 'tabler:gymnastics');
 
         $menu
             ->addChild('movies', [
@@ -34,10 +39,9 @@ final class AdminMenuBuilder implements MenuBuilderInterface
             ])
         ;
 
-        $menu
-            ->addChild('suppliers', [
-                'route' => 'app_admin_supplier_index',
-            ])
+        $subMenu->addChild('suppliers', [
+            'route' => 'app_admin_supplier_index',
+        ])
         ;
 
         return $menu;

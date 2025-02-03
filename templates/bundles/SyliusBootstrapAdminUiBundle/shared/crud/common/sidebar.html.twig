@@ -1,5 +1,9 @@
 <aside class="navbar navbar-vertical navbar-expand-lg bg-secondary d-print-none">
     <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu"
+                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         {% hook 'sylius_admin.common.component.sidebar' with { _prefixes: [] } %}
     </div>
 </aside>
