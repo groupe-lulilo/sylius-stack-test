@@ -1,0 +1,17 @@
+
+{% set category = hookable_metadata.context.category %}
+
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ category.title|nl2br }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

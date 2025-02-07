@@ -43,6 +43,14 @@ final class AdminMenuBuilder implements MenuBuilderInterface
             'route' => 'app_admin_supplier_index',
         ])
         ;
+        $subMenu->addChild('articles', [
+            'route' => 'app_admin_article_index',
+        ])
+        ;
+        $subMenu->addChild('categories', [
+            'route' => 'app_admin_category_index',
+        ])
+        ;
 
         return $menu;
     }

@@ -68,3 +68,10 @@ app.ui.address: Address
 app.ui.phone: Phone
 app.ui.manager_name: 'Manager name'
 app.ui.last_order_date: 'Last order date'
+app.ui.categories: Categories
+app.ui.category: category
+app.ui.articles: Products
+app.ui.article: product
+app.ui.price: Price
+app.ui.brand: Brand
+app.ui.reference_supplier: Ref supplier
