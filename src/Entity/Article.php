@@ -52,8 +52,9 @@ class Article implements ResourceInterface
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $brand = null;
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Brand $brand = null;
 
     public function getId(): ?int
     {
@@ -108,6 +109,18 @@ class Article implements ResourceInterface
         return $this;
     }
 
+    public function getBrand(): ?Brand
+    {
+        return $this->brand;
+    }
+
+    public function setBrand(?Brand $brand): static
+    {
+        $this->brand = $brand;
+
+        return $this;
+    }
+
     public function getDescription(): ?string
     {
         return $this->description;
@@ -116,18 +129,6 @@ class Article implements ResourceInterface
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getBrand(): ?string
-    {
-        return $this->brand;
-    }
-
-    public function setBrand(string $brand): static
-    {
-        $this->brand = $brand;
 
         return $this;
     }

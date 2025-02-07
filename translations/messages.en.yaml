@@ -73,5 +73,6 @@ app.ui.category: category
 app.ui.articles: Products
 app.ui.article: product
 app.ui.price: Price
-app.ui.brand: Brand
 app.ui.reference_supplier: Ref supplier
+app.ui.brands: Brands
+app.ui.brand: Brand

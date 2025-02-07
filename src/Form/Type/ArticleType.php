@@ -3,6 +3,7 @@
 namespace App\Form\Type;
 
 use App\Entity\Article;
+use App\Entity\Brand;
 use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -16,7 +17,10 @@ final class ArticleType extends AbstractType
         $builder
             ->add('title')
             ->add('price')
-            ->add('brand')
+            ->add('brand', EntityType::class, [
+                'class' => Brand::class,
+                'choice_label' => 'title',
+            ])
             ->add('referenceSupplier')
             ->add('description')
             ->add('category', EntityType::class, [

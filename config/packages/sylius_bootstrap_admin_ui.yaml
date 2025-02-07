@@ -14,6 +14,9 @@ sylius_twig_hooks:
         'sylius_admin.category.show.content':
             body:
                 template: 'category/show.html.twig'
+        'sylius_admin.brand.show.content':
+            body:
+                template: 'brand/show.html.twig'
         'sylius_admin.dashboard.index':
             body:
                 template: 'dashboard.html.twig'
