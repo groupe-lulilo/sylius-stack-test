@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\Type;
 
 use App\Entity\Article;
 use App\Entity\Category;
@@ -9,19 +9,19 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ArticleType extends AbstractType
+final class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('title')
             ->add('price')
-            ->add('referenceFabricant')
-            ->add('description')
             ->add('brand')
+            ->add('referenceSupplier')
+            ->add('description')
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-                'choice_label' => 'id',
+                'choice_label' => 'title',
             ])
         ;
     }

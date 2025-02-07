@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Form\Type\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -13,8 +14,10 @@ use Sylius\Resource\Metadata\Show;
 use Sylius\Resource\Metadata\Update;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use App\Grid\ArticleGrid;
+
 #[AsResource(
     section: 'admin',
+    formType: ArticleType::class,
     templatesDir: '@SyliusAdminUi/crud',
     routePrefix: '/admin',
     operations: [

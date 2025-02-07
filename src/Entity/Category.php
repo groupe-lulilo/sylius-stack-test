@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Form\Type\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Resource\Metadata\AsResource;
@@ -15,6 +16,7 @@ use App\Grid\CategoryGrid;
 #[AsResource(
     section: 'admin',
     templatesDir: '@SyliusAdminUi/crud',
+    formType: CategoryType::class,
     routePrefix: '/admin',
     operations: [
         new Create(),
