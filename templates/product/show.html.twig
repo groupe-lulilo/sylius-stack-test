@@ -1,0 +1,22 @@
+
+{% set product = hookable_metadata.context.product %}
+
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.title|nl2br }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Price: <strong>{{ product.price|nl2br }}</strong></h6>
+                        <p class="card-text">Brand: <strong>{{ product.brand.title|nl2br }}</strong></p>
+                        <p class="card-text">Ref Supplier: <strong>{{ product.referenceSupplier|nl2br }}</strong></p>
+                        <p class="card-text">Description : <strong>{{ product.description|nl2br }}</strong></p>
+                        <p class="card-text">Category : <strong>{{ product.category.title|nl2br }}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

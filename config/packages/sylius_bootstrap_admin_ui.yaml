@@ -8,9 +8,9 @@ sylius_twig_hooks:
         'sylius_admin.supplier.show.content':
             body:
                 template: 'supplier/show.html.twig'
-        'sylius_admin.article.show.content':
+        'sylius_admin.product.show.content':
             body:
-                template: 'article/show.html.twig'
+                template: 'product/show.html.twig'
         'sylius_admin.category.show.content':
             body:
                 template: 'category/show.html.twig'

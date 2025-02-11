@@ -20,13 +20,13 @@ final class Version20250207154649 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE article ALTER brand_id SET NOT NULL');
+        $this->addSql('ALTER TABLE product ALTER brand_id SET NOT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE SCHEMA public');
-        $this->addSql('ALTER TABLE article ALTER brand_id DROP NOT NULL');
+        $this->addSql('ALTER TABLE product ALTER brand_id DROP NOT NULL');
     }
 }

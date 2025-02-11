@@ -2,8 +2,8 @@
 
 namespace App\Entity;
 
-use App\Form\Type\ArticleType;
-use App\Repository\ArticleRepository;
+use App\Form\Type\ProductType;
+use App\Repository\ProductRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Resource\Metadata\AsResource;
@@ -13,23 +13,23 @@ use Sylius\Resource\Metadata\Index;
 use Sylius\Resource\Metadata\Show;
 use Sylius\Resource\Metadata\Update;
 use Sylius\Component\Resource\Model\ResourceInterface;
-use App\Grid\ArticleGrid;
+use App\Grid\ProductGrid;
 
 #[AsResource(
     section: 'admin',
-    formType: ArticleType::class,
+    formType: ProductType::class,
     templatesDir: '@SyliusAdminUi/crud',
     routePrefix: '/admin',
     operations: [
         new Create(),
-        new Index(grid: ArticleGrid::class),
+        new Index(grid: ProductGrid::class),
         new Show(),
         new Update(),
         new Delete(),
     ],
 )]
-#[ORM\Entity(repositoryClass: ArticleRepository::class)]
-class Article implements ResourceInterface
+#[ORM\Entity(repositoryClass: ProductRepository::class)]
+class Product implements ResourceInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

@@ -20,13 +20,13 @@ final class Version20250207140007 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql("ALTER TABLE article ADD COLUMN brand VARCHAR(255) DEFAULT 'Unknown'");
+        $this->addSql("ALTER TABLE product ADD COLUMN brand VARCHAR(255) DEFAULT 'Unknown'");
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE SCHEMA public');
-        $this->addSql('ALTER TABLE article DROP brand');
+        $this->addSql('ALTER TABLE product DROP brand');
     }
 }

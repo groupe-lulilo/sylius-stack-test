@@ -2,7 +2,7 @@
 
     namespace App\Grid;
 
-    use App\Entity\Article;
+    use App\Entity\Product;
     use Sylius\Bundle\GridBundle\Builder\Action\Action;
     use Sylius\Bundle\GridBundle\Builder\Action\CreateAction;
     use Sylius\Bundle\GridBundle\Builder\Action\DeleteAction;
@@ -17,7 +17,7 @@
     use Sylius\Bundle\GridBundle\Grid\AbstractGrid;
     use Sylius\Bundle\GridBundle\Grid\ResourceAwareGridInterface;
 
-    final class ArticleGrid extends AbstractGrid implements ResourceAwareGridInterface
+    final class ProductGrid extends AbstractGrid implements ResourceAwareGridInterface
     {
         public function __construct()
         {
@@ -92,6 +92,6 @@
 
         public function getResourceClass(): string
         {
-            return Article::class;
+            return Product::class;
         }
     }
