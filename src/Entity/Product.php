@@ -56,6 +56,9 @@ class Product implements ResourceInterface
     #[ORM\JoinColumn(nullable: false)]
     private ?Brand $brand = null;
 
+    #[ORM\Column]
+    private ?float $priceSupplier = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -81,7 +84,17 @@ class Product implements ResourceInterface
     public function setPrice(float $price): static
     {
         $this->price = $price;
+        return $this;
+    }
 
+    public function getPriceSupplier(): ?float
+    {
+        return $this->priceSupplier;
+    }
+
+    public function setPriceSupplier(float $priceSupplier): static
+    {
+        $this->priceSupplier = $priceSupplier;
         return $this;
     }
 

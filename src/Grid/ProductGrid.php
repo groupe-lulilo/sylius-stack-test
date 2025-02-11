@@ -46,6 +46,9 @@
                 ->addFilter(StringFilter::create('price')
                     ->setLabel('app.ui.price')
                 )
+                ->addFilter(StringFilter::create('priceSupplier')
+                    ->setLabel('app.ui.price_supplier')
+                )
                 ->addField(
                     StringField::create('title')
                         ->setLabel('Title')
@@ -74,6 +77,11 @@
                 ->addField(
                     StringField::create('price')
                         ->setLabel('Price')
+                        ->setSortable(true)
+                )
+                ->addField(
+                    StringField::create('priceSupplier')
+                        ->setLabel('PriceSupplier')
                         ->setSortable(true)
                 )
                 ->addActionGroup(

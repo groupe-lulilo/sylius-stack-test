@@ -73,7 +73,9 @@ app.ui.category: category
 app.ui.products: Products
 app.ui.product: product
 app.ui.price: Price
+app.ui.price_supplier: Price Supplier
 app.ui.reference_supplier: Ref supplier
 app.ui.brands: Brands
 app.ui.brand: Brand
 sylius.ui.are_your_sure_you_want_to_perform_this_action: Are you sure you want to perform this action
+sylius.ui.this_form_contains_errors: This form contains errors
