@@ -55,6 +55,17 @@ services:
       # - ./docker/db/data:/var/lib/postgresql/data:rw
 ###< doctrine/doctrine-bundle ###
 
+  pgadmin:
+      image: dpage/pgadmin4:9
+      restart: unless-stopped
+      environment:
+          PGADMIN_DEFAULT_EMAIL: "admin@example.com"  # Change ton email admin
+          PGADMIN_DEFAULT_PASSWORD: "admin"           # Change ton mot de passe
+      ports:
+          - "5050:80"  # pgAdmin accessible via http://localhost:5050
+      volumes:
+          - pgadmin_data:/var/lib/pgadmin
+
 volumes:
   caddy_data:
   caddy_config:
@@ -64,3 +75,5 @@ volumes:
 ###> doctrine/doctrine-bundle ###
   database_data:
 ###< doctrine/doctrine-bundle ###
+  
+  pgadmin_data:
