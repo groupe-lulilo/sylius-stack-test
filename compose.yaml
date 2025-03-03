@@ -74,6 +74,13 @@ services:
               published: 8080
               protocol: tcp
 
+    mailpit:
+        image: axllent/mailpit
+        container_name: sylius-stack-test-mailer-1  # Assure que ce nom correspond à celui utilisé dans MAILER_DSN
+        restart: unless-stopped
+        ports:
+            - "8025:8025"  # Interface Web
+            - "1025:1025"  # Port SMTP
 volumes:
   caddy_data:
   caddy_config:
