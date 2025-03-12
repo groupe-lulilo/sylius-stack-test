@@ -55,6 +55,9 @@ final class AdminMenuBuilder implements MenuBuilderInterface
             'route' => 'app_admin_brand_index',
         ])
         ;
+        $menu->addChild('diagram', [
+            'route' => 'app_diagram',
+        ]);
 
         return $menu;
     }

@@ -22,3 +22,7 @@
 .btn-list a[data-test-cancel-changes-button] {
     margin-bottom: 10px;
 }
+
+.diagram svg {
+     height: 100% !important;
+ }

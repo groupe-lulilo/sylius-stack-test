@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Diagram</h1>
+        <div id="paper" class="diagram"></div>
+        <script src="https://cdn.jsdelivr.net/npm/@joint/core@4.1.3/dist/joint.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // JointJS v4.1.3
+                const { dia, shapes } = joint;
+                const namespace = shapes;
+
+                const graph = new dia.Graph({}, { cellNamespace: namespace });
+
+                const paper = new dia.Paper({
+                    el: document.getElementById('paper'),
+                    model: graph,
+                    width: 600,
+                    height: 600,
+                    background: { color: '#5c5c5c' },
+                    cellViewNamespace: namespace
+                });
+                console.log(paper)
+
+                const rect1 = new shapes.standard.Rectangle();
+                rect1.position(25, 25);
+                rect1.resize(180, 50);
+                rect1.addTo(graph);
+
+                const rect2 = new shapes.standard.Rectangle();
+                rect2.position(95, 225);
+                rect2.resize(180, 50);
+                rect2.addTo(graph);
+
+                rect1.attr('body', { stroke: '#C94A46', rx: 2, ry: 2 });
+                rect2.attr('body', { stroke: '#C94A46', rx: 2, ry: 2 });
+
+                rect1.attr('label', { text: 'Hello', fill: '#353535' });
+                rect2.attr('label', { text: 'World!', fill: '#353535' });
+            });
+        </script>
+    </div>
+{% endblock %}
