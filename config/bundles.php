@@ -25,4 +25,5 @@ return [
     Sylius\TwigExtra\Symfony\SyliusTwigExtraBundle::class => ['all' => true],
     Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
     Sylius\BootstrapAdminUi\Symfony\SyliusBootstrapAdminUiBundle::class => ['all' => true],
+    Symfony\UX\Chartjs\ChartjsBundle::class => ['all' => true],
 ];
