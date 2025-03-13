@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    {{ 'app.ui.diagram'|trans }} | {{ parent() }}
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <h1>Diagramme des relations de produits</h1>
-        
+
         <div class="row mb-4">
             <div class="col-md-4">
                 <div class="form-group">
@@ -17,9 +21,9 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="paper" class="diagram" style="height: 600px; border: 1px solid #ddd; background-color: white;"></div>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/@joint/core@4.1.3/dist/joint.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@joint/layout@4.1.3/dist/joint.layout.min.js"></script>
         <script>
@@ -45,14 +49,14 @@
                     }{% if not loop.last %},{% endif %}
                     {% endfor %}
                 ];
-                
+
                 // JointJS setup
                 const { dia, shapes, linkTools, elementTools } = joint;
                 const namespace = shapes;
-                
+
                 // Créer un nouveau graphe
                 const graph = new dia.Graph({}, { cellNamespace: namespace });
-                
+
                 // Initialiser le papier
                 const paper = new dia.Paper({
                     el: document.getElementById('paper'),
@@ -65,31 +69,31 @@
                     cellViewNamespace: namespace,
                     interactive: true
                 });
-                
+
                 // Fonction pour créer un nœud
                 function createNode(label, x, y, width, height, attrs = {}) {
                     const rect = new shapes.standard.Rectangle();
                     rect.position(x, y);
                     rect.resize(width, height);
                     rect.attr({
-                        body: { 
+                        body: {
                             fill: attrs.fill || '#5755d9',
                             stroke: attrs.stroke || '#1a1a1a',
                             strokeWidth: 2,
-                            rx: 5, 
-                            ry: 5 
+                            rx: 5,
+                            ry: 5
                         },
-                        label: { 
+                        label: {
                             text: label,
                             fill: 'white',
                             fontSize: 14,
                             fontWeight: 'bold'
                         }
                     });
-                    
+
                     return rect;
                 }
-                
+
                 // Fonction pour créer un lien entre deux nœuds
                 function createLink(source, target, label = '') {
                     const link = new shapes.standard.Link({
@@ -129,40 +133,40 @@
                             }
                         ]
                     });
-                    
+
                     return link;
                 }
-                
+
                 // Gérer la sélection d'un produit
                 document.getElementById('product-select').addEventListener('change', function(e) {
                     const productId = parseInt(e.target.value);
-                    
+
                     // Effacer le graphe actuel
                     graph.clear();
-                    
+
                     if (!productId) return;
-                    
+
                     // Trouver le produit sélectionné
                     const product = productsData.find(p => p.id === productId);
                     if (!product) return;
-                    
+
                     // Créer le nœud du produit au centre
                     const productNode = createNode(product.title, 350, 250, 200, 80, { fill: '#5755d9' });
                     productNode.addTo(graph);
-                    
+
                     // Ajouter des propriétés au nœud du produit
                     const productDetails = new shapes.standard.Rectangle();
                     productDetails.position(350, 350);
                     productDetails.resize(200, 160);
                     productDetails.attr({
-                        body: { 
+                        body: {
                             fill: '#f0f0f0',
                             stroke: '#5755d9',
                             strokeWidth: 2,
-                            rx: 5, 
-                            ry: 5 
+                            rx: 5,
+                            ry: 5
                         },
-                        label: { 
+                        label: {
                             text: `Prix: ${product.price} €\nPrix fournisseur: ${product.priceSupplier} €\nRéf: ${product.referenceSupplier}`,
                             fill: '#333333',
                             fontSize: 12,
@@ -172,32 +176,32 @@
                         }
                     });
                     productDetails.addTo(graph);
-                    
+
                     // Lien entre produit et détails
                     const detailsLink = createLink(productNode, productDetails, 'Détails');
                     detailsLink.addTo(graph);
-                    
+
                     // Créer le nœud de catégorie
                     const categoryNode = createNode(product.category.name, 100, 100, 160, 50, { fill: '#46b881' });
                     categoryNode.addTo(graph);
-                    
+
                     // Créer le nœud de marque
                     const brandNode = createNode(product.brand.name, 600, 100, 160, 50, { fill: '#f1c40f' });
                     brandNode.addTo(graph);
-                    
+
                     // Créer les liens
                     const categoryLink = createLink(productNode, categoryNode, 'Appartient à');
                     categoryLink.addTo(graph);
-                    
+
                     const brandLink = createLink(productNode, brandNode, 'Fabriqué par');
                     brandLink.addTo(graph);
-                    
+
                     // Ajouter la possibilité de déplacer les éléments
                     paper.on('element:pointerdown', function(elementView) {
                         const element = elementView.model;
                         element.toFront();
                     });
-                    
+
                     // Auto-layout graph
                     joint.layout.DirectedGraph.layout(graph, {
                         setLinkVertices: true,
