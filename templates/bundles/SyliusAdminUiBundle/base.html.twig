@@ -21,6 +21,7 @@
 
 {% block javascripts %}
     {% hook generic_hook ~ '#javascripts' %}
+    {{ importmap('app') }}
 {% endblock %}
 </body>
 </html>

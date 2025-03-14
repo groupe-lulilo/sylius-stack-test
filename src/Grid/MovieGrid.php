@@ -30,6 +30,7 @@ final class MovieGrid extends AbstractGrid implements ResourceAwareGridInterface
     public function buildGrid(GridBuilderInterface $gridBuilder): void
     {
         $gridBuilder
+            ->setLimits([10, 25, 50, 100])
             ->addFilter(
                 BooleanFilter::create('archived')
                     ->setLabel('app.ui.archived')
